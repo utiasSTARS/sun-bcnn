@@ -1,2 +1,3 @@
-# sun-bcnn-vo
-Visual Odometry with a Bayesian CNN Sun Detector
+# Sun-BCNN
+Bayesian Convolutional Neural Network to infer Sun Direction
+![SUN-BCNN](sun-bcnn.png)

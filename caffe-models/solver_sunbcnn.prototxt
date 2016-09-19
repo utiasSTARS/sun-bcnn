@@ -1,0 +1,16 @@
+net: "train_kittisuncnn_l2norm_dall00.prototxt"
+test_initialization: true
+test_iter: 50
+test_interval: 500
+display: 100
+average_loss: 100
+base_lr: 0.01
+max_iter: 30000
+lr_policy: "step"
+stepsize: 10000 #1600 # 80 epoch for KingsCollege (# train 1220, batchsize 64)
+gamma: 0.94     #0.9
+momentum: 0.9
+weight_decay: 0.0002
+snapshot: 5000
+snapshot_prefix: "sun_cnn_snapshot_00"
+solver_mode: GPU

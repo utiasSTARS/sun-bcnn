@@ -1,0 +1,1 @@
+python ../scripts/test_bayesian_suncnn.py --model=../caffe-models/test_kittisuncnn_l2norm_dall.prototxt --weights=/home/valentinp/Desktop/stars-sun-cnn/caffe-models/overnight/sun_cnn_snapshot_00_iter_30000.caffemodel --dataset=/media/stars/SunBPN2/kitti_sun_test_00_lmdb/ --meanfile=/media/stars/SunBPN2/kitti_sun_train_00_lmdb_mean.binaryproto
