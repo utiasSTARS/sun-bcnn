@@ -5,7 +5,7 @@ Bayesian Convolutional Neural Network to infer Sun Direction
 
 1. Download and compile [Caffe-Sl](https://github.com/wanji/caffe-sl) (we use their L2Norm layer).
 
-2. Ensure that the lmdb and cv2 python packages are installed.
+2. Ensure that the **lmdb** and **cv2** python packages are installed (e.g. through pip).
 
 3. Clone sun-bcnn:
 ```
