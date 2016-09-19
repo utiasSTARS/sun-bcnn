@@ -13,13 +13,22 @@ git clone https://github.com/utiasSTARS/sun-bcnn-vo.git
 ```
 
 ## Testing with pre-trained model
-1. Edit the following files:
+1. Visit ftp://128.100.201.179/2016-sun_bcnn to download the pre-trained models from the models folder along with a test LMDB file.
+
+2. Edit **caffe-files/test_sunbcnn.sh** to match appropriate mean file, weights file and testing file.  Edit **scripts/test_sunbcnn.py** with appropriate directories.
+
+3. Run **scripts/test_sunbcnn.sh**:
+```
+bash scripts/test_sunbcnn.sh
+```
+
 
 ## Testing with pre-trained model
-2. Edit the following files:
-
+Coming soon...
 
 ##  Citation
+Submitted to ICRA 2016. arXiv publication coming soon...
+
 ![SUN-BCNN](sun-bcnn.png)
 
 ##  References
