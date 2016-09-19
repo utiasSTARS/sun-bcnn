@@ -9,10 +9,10 @@ layer {
   }
   transform_param {
     mirror: false
-    mean_file: "/media/stars/SunBPN2/kitti_sun_train_00_lmdb_mean.binaryproto"
+    mean_file: "MEANFILE_CHANGEME.binaryproto"
   }
   data_param {
-    source: "/media/stars/SunBPN2/kitti_sun_train_00_lmdb"
+    source: "DATASET_TRAIN_LMDB_FILE_CHANGEME"
     batch_size: 64
     backend: LMDB
   }
@@ -27,10 +27,10 @@ layer {
   }
   transform_param {
     mirror: false
-    mean_file: "/media/stars/SunBPN2/kitti_sun_train_00_lmdb_mean.binaryproto"
+    mean_file: "MEANFILE_CHANGEME.binaryproto"
   }
   data_param {
-    source: "/media/stars/SunBPN2/kitti_sun_test_00_lmdb"
+    source: "DATASET_TEST_LMDB_FILE_CHANGEME"
     batch_size: 60
     backend: LMDB
   }
