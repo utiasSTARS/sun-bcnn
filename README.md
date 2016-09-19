@@ -22,8 +22,12 @@ git clone https://github.com/utiasSTARS/sun-bcnn-vo.git
 bash scripts/test_sunbcnn.sh
 ```
 
-## Testing with pre-trained model
+## Training
+### Using KITTI data
 Coming soon...
+### Using your own data
+You're on your own!
+
 
 ##  Citation
 Submitted to ICRA 2016. arXiv publication coming soon...
