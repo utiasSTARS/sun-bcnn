@@ -1,5 +1,5 @@
 # Sun-BCNN
-Bayesian Convolutional Neural Network to infer Sun Direction
+Bayesian Convolutional Neural Network to infer Sun Direction from a single RGB image.
 
 ## Installation & Pre-Requisites
 
@@ -15,13 +15,12 @@ git clone https://github.com/utiasSTARS/sun-bcnn-vo.git
 ## Testing with pre-trained model
 1. Visit ftp://128.100.201.179/2016-sun_bcnn to download the pre-trained models from the models folder along with a test LMDB file.
 
-2. Edit **caffe-files/test_sunbcnn.sh** to match appropriate mean file, weights file and testing file.  Edit **scripts/test_sunbcnn.py** with appropriate directories.
+2. Edit *caffe-files/test_sunbcnn.sh* to match appropriate mean file, weights file and testing file.  Edit *scripts/test_sunbcnn.py* with appropriate directories.
 
-3. Run **scripts/test_sunbcnn.sh**:
+3. Run *scripts/test_sunbcnn.sh*:
 ```
 bash scripts/test_sunbcnn.sh
 ```
-
 
 ## Testing with pre-trained model
 Coming soon...
