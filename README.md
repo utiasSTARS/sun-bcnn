@@ -30,7 +30,11 @@ You're on your own!
 
 
 ##  Citation
-Submitted to ICRA 2016. arXiv publication coming soon...
+V. Peretroukhin, L. Clement, J. Kelly.
+Reducing Drift in Visual Odometry by Inferring Sun Direction using a Bayesian Convolutional Neural Network
+Submitted to ICRA 2016.
+
+[arXiv:1609.05993](http://arxiv.org/abs/1609.05993)
 
 ![SUN-BCNN](sun-bcnn.png)
 
