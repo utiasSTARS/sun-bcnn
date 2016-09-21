@@ -38,8 +38,7 @@ bash scripts/train_sunbcnn.sh
 Note: the LMDB files contain images that have been re-sized and padded with zeros along with target Sun directions (extracted through ephemeris tables and the ground truth provided by KITTI GPS/INS). A human readable table of image filenames and Sun directions can be found in the kitti-groundtruth-data folder (consult our paper for camera frame orientation).
 
 ### Using your own data
-You're on your own!
-
+See **scripts/create_lmdb_sunbcnn_dataset.py** for a template of how to create your own training data.
 
 ##  Citation
 V. Peretroukhin, L. Clement, J. Kelly.
