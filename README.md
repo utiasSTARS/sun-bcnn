@@ -46,7 +46,7 @@ See *scripts/create_lmdb_sunbcnn_dataset.py* for a wireframe of how to create yo
 V. Peretroukhin, L. Clement, J. Kelly.
 *Reducing Drift in Visual Odometry by Inferring Sun Direction using a Bayesian Convolutional Neural Network*
 
-Submitted to ICRA 2016. Pre-print available: [arXiv:1609.05993](http://arxiv.org/abs/1609.05993).
+Submitted to ICRA 2017. Pre-print available: [arXiv:1609.05993](http://arxiv.org/abs/1609.05993).
 
 ![SUN-BCNN](sun-bcnn.png)
 
