@@ -1,7 +1,7 @@
 # Sun-BCNN
 Bayesian Convolutional Neural Network to infer Sun Direction from a single RGB image, trained on the KITTI dataset [1].
 
-![SUN-BCNN-GIF](https://media.giphy.com/media/PpOSRMWKLHwd2/giphy.gif)
+![SUN-BCNN-GIF](https://media.giphy.com/media/Yf4g34bMPrq24/giphy.gif)
 
 ## Installation & Pre-Requisites
 
