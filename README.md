@@ -1,6 +1,8 @@
 # Sun-BCNN
 Bayesian Convolutional Neural Network to infer Sun Direction from a single RGB image, trained on the KITTI dataset [1].
 
+![](http://i.giphy.com/qB4pb5T94axLa.gif)
+
 ## Installation & Pre-Requisites
 
 1. Download and compile [Caffe-Sl](https://github.com/wanji/caffe-sl) (we use their L2Norm layer).
