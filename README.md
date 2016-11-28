@@ -5,7 +5,7 @@ Bayesian Convolutional Neural Network to infer Sun Direction from a single RGB i
 
 ## Installation & Pre-Requisites
 
-1. Download and compile [Caffe-Sl](https://github.com/wanji/caffe-sl) (we use their L2Norm layer).
+1. Download and compile [The STARS Lab fork of Caffe-Sl](https://github.com/utiasSTARS/caffe-sl) (we use their L2Norm layer and add BCNN test-time dropout capability).
 
 2. Ensure that the **lmdb** and **cv2** python packages are installed (e.g. through pip).
 
