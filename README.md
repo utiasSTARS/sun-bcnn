@@ -11,7 +11,7 @@ Bayesian Convolutional Neural Network to infer Sun Direction from a single RGB i
 
 3. Clone sun-bcnn:
 ```
-git clone https://github.com/utiasSTARS/sun-bcnn-vo.git
+git clone https://github.com/utiasSTARS/sun-bcnn.git
 ```
 
 ## Testing with pre-trained model
