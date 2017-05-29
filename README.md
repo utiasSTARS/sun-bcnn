@@ -26,7 +26,7 @@ bash scripts/test_sunbcnn.sh
 
 ## Training
 ### Using KITTI data
-1. Visit ftp://128.100.201.179/2016-sun_bcnn and download the training LMDB file. Visit http://vision.princeton.edu/pvt/GoogLeNet/Places/ and download the pre-trained GoogLeNet from Princeton (trained on MIT Places data).
+1. Visit ftp://128.100.201.179/2016-sun_bcnn and download a training LMDB file. Visit http://vision.princeton.edu/pvt/GoogLeNet/Places/ (Note (May 2017): This page is now down, but you can access the same model on our servers: ftp://128.100.201.179/2016-sun_bcnn/places_googlenet.caffemodel) and download the pre-trained GoogLeNet from Princeton (trained on MIT Places data).
 
 2. Edit *caffe-files/train_sunbcnn.prototxt* with the appropriate file names (search 'CHANGEME')
 
@@ -46,7 +46,7 @@ See *scripts/create_lmdb_sunbcnn_dataset.py* for a wireframe of how to create yo
 V. Peretroukhin, L. Clement, J. Kelly.
 *Reducing Drift in Visual Odometry by Inferring Sun Direction using a Bayesian Convolutional Neural Network*
 
-Submitted to ICRA 2017. Pre-print available: [arXiv:1609.05993](http://arxiv.org/abs/1609.05993).
+Proceedings of ICRA 2017. Pre-print available: [arXiv:1609.05993](http://arxiv.org/abs/1609.05993).
 
 ![SUN-BCNN](sun-bcnn.png)
 
