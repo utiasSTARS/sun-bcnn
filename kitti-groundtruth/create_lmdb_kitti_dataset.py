@@ -38,7 +38,7 @@ datasetFilenames = [
 ]
 datasetFilenamesDir = './' 
 kittiDataDir = '/media/raid5-array/datasets/KITTI/raw/' #High level KITTI directory
-exportDirectory = '~/' #Where you want your lmdb files to end up in
+exportDirectory = './' #Where you want your lmdb files to end up in
 
 kittiImageSize = [1241, 376]
 
