@@ -125,7 +125,7 @@ def createLMDB(lmdbFileName, kittiDataDir, imageFileNames, sunDirList, shuffle):
 for dat_i in range(len(datasetFilenames)):
     #Export train and test data
     fileNameParts = datasetFilenames[dat_i].split(".")
-    lmdbFileName = exportDirectory + fileNameParts[0].split("/")[1] + "_lmdb"
+    lmdbFileName = exportDirectory + fileNameParts[0] + "_lmdb"
     sunDirList, imageFileNames = readGroundTruth(datasetFilenamesDir + datasetFilenames[dat_i])
 
     print("Creating KITTI Sun-BCNN Dataset: %s." % (lmdbFileName))
@@ -135,10 +135,10 @@ for dat_i in range(len(datasetFilenames)):
     trialType = fileNameParts[-2]
     if trialType == 'test':
         shuffle = False
+        print('Detected TEST file. Not shuffling images.')
     else:
         shuffle = True
-
-    print("Shuffle: %s" % (str(shuffle)))
+        print('Detected TRAIN file. Shuffling images.')
 
     start = time.clock()
     createLMDB(lmdbFileName, kittiDataDir, imageFileNames, sunDirList, shuffle)
