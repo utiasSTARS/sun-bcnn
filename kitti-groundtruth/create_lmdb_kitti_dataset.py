@@ -1,8 +1,5 @@
 #Pertinent directories
 caffe_root = '~/caffe-sl/' #Caffe-Sl directory
-datasetGroundTruthDirectory = '' #Where your .txt groundtruth files are stores (the files within the datasets variable below)
-
-import sys
 sys.path.insert(0, caffe_root + 'python')
 import numpy as np
 import lmdb
@@ -38,6 +35,9 @@ datasetFilenames = [
     'kitti_sun_train_09.csv',
     'kitti_sun_train_10.csv'
 ]
+datasetFilenamesDir = './' 
+kittiDataDir = '/media/raid5-array/datasets/KITTI/raw/' #High level KITTI directory
+exportDirectory = '~/' #Where you want your lmdb files to end up in
 
 kittiImageSize = [1241, 376]
 
@@ -45,7 +45,6 @@ preserveAspectRatio = False #If true, 0s will be padded at the top and bottom of
 centreCrop = False #If true, this will centre crop the KITTI image to 376x376
 azZenTarget = False #If true, target will be azimuth/zenith instead of unit vectors
 
-exportDirectory = '~/' #Where you want your lmdb files to end up in
 
 
 
@@ -74,7 +73,7 @@ def readGroundTruth(datasetTxtFilepath):
 
 
 
-def createLMDB(lmdbFileName, imageFileNames, sunDirList, shuffle):
+def createLMDB(lmdbFileName, kittiDataDir, imageFileNames, sunDirList, shuffle):
     env = lmdb.open(lmdbFileName, map_size=int(1e12))
     count = 0
 
@@ -88,7 +87,7 @@ def createLMDB(lmdbFileName, imageFileNames, sunDirList, shuffle):
                 print('Saving image: %d (ID: %d)' % (count + 1, i))
 
             sunDir = sunDirList[int(i)]
-            fileName_l = imageFileNames[int(i)]
+            fileName_l = kittiDataDir + imageFileNames[int(i)]
 
             #Read in and ensure BGR
             im_orig_l = cv2.imread(fileName_l)
@@ -126,7 +125,7 @@ for dat_i in range(len(datasetFilenames)):
     #Export train and test data
     fileNameParts = datasetFilenames[dat_i].split(".")
     lmdbFileName = exportDirectory + fileNameParts[0].split("/")[1] + "_lmdb"
-    sunDirList, imageFileNames = readGroundTruth(datasetFilenames[dat_i])
+    sunDirList, imageFileNames = readGroundTruth(datasetFilenamesDir + datasetFilenames[dat_i])
 
     print("Creating KITTI Sun-BCNN Dataset: %s." % (lmdbFileName))
     print("Total images to process: %d" % (len(imageFileNames)))
@@ -141,6 +140,6 @@ for dat_i in range(len(datasetFilenames)):
     print("Shuffle: %s" % (str(shuffle)))
 
     start = time.clock()
-    createLMDB(lmdbFileName, imageFileNames, sunDirList, shuffle)
+    createLMDB(lmdbFileName, kittiDataDir, imageFileNames, sunDirList, shuffle)
     end = time.clock()
     print("Done. Elapsed time: %f sec." % (end - start))
