@@ -1,38 +1,15 @@
 name: "GoogLeNet"
 layer {
-  name: "data"
-  type: "Data"
+  name: "input"
+  type: "Input"
   top: "data"
-  top: "label"
-  include {
-    phase: TRAIN
-  }
-  transform_param {
-    mirror: false
-    mean_file: "MEAN_FILE"
-  }
-  data_param {
-    source: "TRAIN_LMDB"
-    batch_size: 64
-    backend: LMDB
-  }
-}
-layer {
-  name: "data"
-  type: "Data"
-  top: "data"
-  top: "label"
-  include {
-    phase: TEST
-  }
-  transform_param {
-    mirror: false
-    mean_file: "MEAN_FILE"
-  }
-  data_param {
-    source: "TEST_LMDB"
-    batch_size: 64
-    backend: LMDB
+  input_param {
+    shape {
+      dim: 25
+      dim: 3
+      dim: 224
+      dim: 224
+    }
   }
 }
 
@@ -1179,14 +1156,6 @@ layer {
   top: "cls1_fc_sundir_norm"
 }
 
-layer {
-  name: "loss1/loss1_projerror"
-  type: "EuclideanLoss"
-  bottom: "cls1_fc_sundir_norm"
-  bottom: "label"
-  top: "loss1/loss1_vecerror"
-  loss_weight: 0.3
-}
 
 layer {
   name: "icp4_reduction1"
@@ -2148,14 +2117,6 @@ layer {
   top: "cls2_fc_sundir_norm"
 }
 
-layer {
-  name: "loss2/loss2_vecerror"
-  type: "EuclideanLoss"
-  bottom: "cls2_fc_sundir_norm"
-  bottom: "label"
-  top: "loss2/loss2_vecerror"
-  loss_weight: 0.3
-}
 
 layer {
   name: "icp7_reduction1"
@@ -3090,13 +3051,4 @@ layer {
   type: "L2Norm"
   bottom: "cls3_fc_sundir"
   top: "cls3_fc_sundir_norm"
-}
-
-layer {
-  name: "loss3/loss3_vecerror"
-  type: "EuclideanLoss"
-  bottom: "cls3_fc_sundir_norm"
-  bottom: "label"
-  top: "loss3/loss3_vecerror"
-  loss_weight: 1
 }

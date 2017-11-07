@@ -5,13 +5,14 @@ layer {
   top: "data"
   input_param {
     shape {
-      dim: 100
+      dim: 25
       dim: 3
       dim: 224
       dim: 224
     }
   }
 }
+
 layer {
   name: "conv1"
   type: "Convolution"
@@ -1040,7 +1041,7 @@ layer {
   }
 }
 layer {
-  name: "cls1_reduction_pose"
+  name: "cls1_reduction"
   type: "Convolution"
   bottom: "cls1_pool"
   top: "cls1_reduction"
@@ -1082,7 +1083,7 @@ layer {
   }
 }
 layer {
-  name: "cls1_fc1_pose"
+  name: "cls1_fc1"
   type: "InnerProduct"
   bottom: "cls1_reduction"
   top: "cls1_fc1"
@@ -1123,10 +1124,10 @@ layer {
   }
 }
 layer {
-  name: "cls1_fc_pose_xyz"
+  name: "cls1_fc_sundir"
   type: "InnerProduct"
   bottom: "cls1_fc1"
-  top: "cls1_fc_xyz"
+  top: "cls1_fc_sundir"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -1151,35 +1152,10 @@ layer {
 layer {
   name: "normalize_lyr1"
   type: "L2Norm"
-  bottom: "cls1_fc_xyz"
-  top: "cls1_fc_xyz_norm"
+  bottom: "cls1_fc_sundir"
+  top: "cls1_fc_sundir_norm"
 }
 
-layer {
-  name: "cls1_fc_pose_wpqr"
-  type: "InnerProduct"
-  bottom: "cls1_fc1"
-  top: "cls1_fc_wpqr"
-  param {
-    lr_mult: 1
-    decay_mult: 1
-  }
-  param {
-    lr_mult: 2
-    decay_mult: 0
-  }
-  inner_product_param {
-    num_output: 4
-    weight_filler {
-      type: "gaussian"
-      std: 0.01
-    }
-    bias_filler {
-      type: "constant"
-      value: 0
-    }
-  }
-}
 
 layer {
   name: "icp4_reduction1"
@@ -2026,7 +2002,7 @@ layer {
   }
 }
 layer {
-  name: "cls2_reduction_pose"
+  name: "cls2_reduction"
   type: "Convolution"
   bottom: "cls2_pool"
   top: "cls2_reduction"
@@ -2109,10 +2085,10 @@ layer {
   }
 }
 layer {
-  name: "cls2_fc_pose_xyz"
+  name: "cls2_fc_sundir"
   type: "InnerProduct"
   bottom: "cls2_fc1"
-  top: "cls2_fc_xyz"
+  top: "cls2_fc_sundir"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -2133,38 +2109,15 @@ layer {
     }
   }
 }
+
 layer {
   name: "normalize_lyr2"
   type: "L2Norm"
-  bottom: "cls2_fc_xyz"
-  top: "cls2_fc_xyz_norm"
+  bottom: "cls2_fc_sundir"
+  top: "cls2_fc_sundir_norm"
 }
 
-layer {
-  name: "cls2_fc_pose_wpqr"
-  type: "InnerProduct"
-  bottom: "cls2_fc1"
-  top: "cls2_fc_wpqr"
-  param {
-    lr_mult: 1
-    decay_mult: 1
-  }
-  param {
-    lr_mult: 2
-    decay_mult: 0
-  }
-  inner_product_param {
-    num_output: 4
-    weight_filler {
-      type: "gaussian"
-      std: 0.01
-    }
-    bias_filler {
-      type: "constant"
-      value: 0
-    }
-  }
-}
+
 layer {
   name: "icp7_reduction1"
   type: "Convolution"
@@ -3025,7 +2978,7 @@ layer {
   }
 }
 layer {
-  name: "cls3_fc1_pose"
+  name: "cls3_fc1"
   type: "InnerProduct"
   bottom: "cls3_pool"
   top: "cls3_fc1"
@@ -3068,10 +3021,10 @@ layer {
 
 
 layer {
-  name: "cls3_fc_pose_xyz"
+  name: "cls3_fc_sundir"
   type: "InnerProduct"
   bottom: "cls3_fc1"
-  top: "cls3_fc_xyz"
+  top: "cls3_fc_sundir"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -3092,35 +3045,10 @@ layer {
     }
   }
 }
+
 layer {
   name: "normalize_lyr3"
   type: "L2Norm"
-  bottom: "cls3_fc_xyz"
-  top: "cls3_fc_xyz_norm"
-}
-
-layer {
-  name: "cls3_fc_pose_wpqr"
-  type: "InnerProduct"
-  bottom: "cls3_fc1"
-  top: "cls3_fc_wpqr"
-  param {
-    lr_mult: 1
-    decay_mult: 1
-  }
-  param {
-    lr_mult: 2
-    decay_mult: 0
-  }
-  inner_product_param {
-    num_output: 4
-    weight_filler {
-      type: "gaussian"
-      std: 0.01
-    }
-    bias_filler {
-      type: "constant"
-      value: 0
-    }
-  }
+  bottom: "cls3_fc_sundir"
+  top: "cls3_fc_sundir_norm"
 }
