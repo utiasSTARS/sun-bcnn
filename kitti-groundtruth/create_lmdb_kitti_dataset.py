@@ -55,7 +55,7 @@ def readGroundTruth(datasetTxtFilepath):
     imageFileNames = []
     with open(datasetTxtFilepath) as f:
         for line in f:
-            lineItems = line.split(',')
+            lineItems = line.split()
             fname = lineItems[0]
 
             sunDir = lineItems[1:4]
@@ -105,7 +105,6 @@ def createLMDB(lmdbFileName, kittiDataDir, imageFileNames, sunDirList, shuffle):
                 im_final = cv2.resize(im_orig_l, (224, 224))
 
 
-
             #Put the channels first
             X = np.transpose(im_final, (2, 0, 1))
 
@@ -113,7 +112,7 @@ def createLMDB(lmdbFileName, kittiDataDir, imageFileNames, sunDirList, shuffle):
             im_dat = caffe.io.array_to_datum(np.array(X).astype(np.uint8))
             im_dat.float_data.extend(sunDir)
             str_id = '{:0>10d}'.format(count)
-            txn.encode(str_id, im_dat.SerializeToString())
+            txn.put(str_id.encode(), im_dat.SerializeToString())
             count = count + 1
 
     env.close()
