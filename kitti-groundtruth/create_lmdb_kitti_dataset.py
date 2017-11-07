@@ -1,5 +1,6 @@
 #Pertinent directories
 caffe_root = '~/caffe-sl/' #Caffe-Sl directory
+import sys
 sys.path.insert(0, caffe_root + 'python')
 import numpy as np
 import lmdb
