@@ -89,7 +89,7 @@ def createLMDB(lmdbFileName, kittiDataDir, imageFileNames, sunDirList, shuffle):
 
             sunDir = sunDirList[int(i)]
             fileName_l = kittiDataDir + imageFileNames[int(i)]
-
+            
             #Read in and ensure BGR
             im_orig_l = cv2.imread(fileName_l)
 
@@ -128,7 +128,7 @@ for dat_i in range(len(datasetFilenames)):
     lmdbFileName = exportDirectory + fileNameParts[0] + "_lmdb"
     sunDirList, imageFileNames = readGroundTruth(datasetFilenamesDir + datasetFilenames[dat_i])
 
-    print("Creating KITTI Sun-BCNN Dataset: %s." % (lmdbFileName))
+    print("Creating KITTI Sun-BCNN Dataset: %s" % (lmdbFileName))
     print("Total images to process: %d" % (len(imageFileNames)))
 
     fileNameParts = datasetFilenames[dat_i].split("_")
