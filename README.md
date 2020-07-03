@@ -1,8 +1,6 @@
 # Sun-BCNN
 Bayesian Convolutional Neural Network to infer Sun Direction from a single RGB image, trained on the KITTI dataset [[1]](#references). 
 
-![SUN-BCNN-GIF](https://media.giphy.com/media/Yf4g34bMPrq24/giphy.gif) 
-
 This code was used in our paper *Reducing Drift in Visual Odometry by Inferring Sun Direction Using a Bayesian Convolutional Neural Network*, which appeared at ICRA 2017 (preprint available: [arXiv:1609.05993](http://arxiv.org/abs/1609.05993)).
 
 ![SUN-BCNN](sun-bcnn.png)
