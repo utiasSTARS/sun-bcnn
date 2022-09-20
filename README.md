@@ -50,10 +50,10 @@ If you use this work in your research, please cite
 ```
 @inproceedings{2017_Peretroukhin_Reducing,
   address = {Singapore},
-	author = {Valentin Peretroukhin and Lee Clement and Jonathan Kelly},
-	booktitle = {Proceedings of the {IEEE} International Conference on Robotics and Automation {(ICRA})},
-	doi = {10.1109/ICRA.2017.7989235},
-	pages = {2035--2042},
+  author = {Valentin Peretroukhin and Lee Clement and Jonathan Kelly},
+  booktitle = {Proceedings of the {IEEE} International Conference on Robotics and Automation {(ICRA})},
+  doi = {10.1109/ICRA.2017.7989235},
+  pages = {2035--2042},
   title = {Reducing Drift in Visual Odometry by Inferring Sun Direction Using a Bayesian Convolutional Neural Network},
   url = {https://arxiv.org/abs/1609.05993},
   year = {2017}
