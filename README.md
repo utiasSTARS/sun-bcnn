@@ -16,7 +16,7 @@ This code was used in our paper *Reducing Drift in Visual Odometry by Inferring 
 git clone https://github.com/utiasSTARS/sun-bcnn.git
 ```
 
-## Testing with pre-trained model
+## Testing with Pre-Trained Model
 1. Visit ftp://128.100.201.179/2016-sun_bcnn and download a pre-trained model, test LMDB file and appropriate mean file.
 
 2. Edit *caffe-files/test_sunbcnn.sh* to match appropriate mean file, weights file and testing file.  Edit *scripts/test_sunbcnn.py* with appropriate directories.
@@ -46,16 +46,29 @@ See *scripts/create_lmdb_sunbcnn_dataset.py* for a wireframe of how to create yo
 
 ##  Citation
 If you use this work in your research, please cite
+
 ```
 @inproceedings{2017_Peretroukhin_Reducing,
   address = {Singapore},
-  author = {Valentin Peretroukhin and Lee Clement and Jonathan Kelly},
-  booktitle = {Proceedings of the {IEEE} International Conference on Robotics and Automation {(ICRA'17})},
-  date = {2017-05-29/2017-06-03},
-  link = {https://arxiv.org/abs/1609.05993},
-  month = {May 29--Jun. 3},
+	author = {Valentin Peretroukhin and Lee Clement and Jonathan Kelly},
+	booktitle = {Proceedings of the {IEEE} International Conference on Robotics and Automation {(ICRA})},
+	doi = {10.1109/ICRA.2017.7989235},
+	pages = {2035--2042},
   title = {Reducing Drift in Visual Odometry by Inferring Sun Direction Using a Bayesian Convolutional Neural Network},
+  url = {https://arxiv.org/abs/1609.05993},
   year = {2017}
+}
+
+@article{2018_Peretroukhin_Inferring,
+  author = {Valentin Peretroukhin and Lee Clement and Jonathan Kelly},
+  doi = {10.1177/0278364917749732},
+  journal = {The International Journal of Robotics Research},
+  month = {August},
+  number = {9},
+  pages = {996--1016},
+  title = {Inferring Sun Direction to Improve Visual Odometry: A Deep Learning Approach},
+  volume = {37},
+  year = {2018}
 }
 ```
 
