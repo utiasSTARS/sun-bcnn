@@ -27,7 +27,7 @@ bash scripts/test_sunbcnn.sh
 ```
 
 ## Training
-### Using KITTI data
+### Using KITTI Data
 1. Visit ftp://128.100.201.179/2016-sun_bcnn and download a training LMDB file. Visit http://vision.princeton.edu/pvt/GoogLeNet/Places/ (Note (May 2017): This page is now down, but you can access the same model on our servers: ftp://128.100.201.179/2016-sun_bcnn/places_googlenet.caffemodel) and download the pre-trained GoogLeNet from Princeton (trained on MIT Places data).
 
 2. Edit *caffe-files/train_sunbcnn.prototxt* with the appropriate file names (search 'CHANGEME')
@@ -41,7 +41,7 @@ bash scripts/train_sunbcnn.sh
 
 Note: the LMDB files contain images that have been re-sized and padded with zeros along with target Sun directions (extracted through ephemeris tables and the ground truth provided by KITTI GPS/INS). A human readable table of image filenames and Sun directions can be found in the kitti-groundtruth-data folder (consult our paper for camera frame orientation).
 
-### Using your own data
+### Using Your Own Data
 See *scripts/create_lmdb_sunbcnn_dataset.py* for a wireframe of how to create your own training LMDB files.
 
 ##  Citation
