@@ -47,7 +47,7 @@ See *scripts/create_lmdb_sunbcnn_dataset.py* for a wireframe of how to create yo
 ##  Citation
 If you use this work in your research, please cite the following papers:
 
-```
+```bibtex
 @inproceedings{2017_Peretroukhin_Reducing,
   address = {Singapore},
   author = {Valentin Peretroukhin and Lee Clement and Jonathan Kelly},
