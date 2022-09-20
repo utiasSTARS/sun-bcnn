@@ -45,7 +45,7 @@ Note: the LMDB files contain images that have been re-sized and padded with zero
 See *scripts/create_lmdb_sunbcnn_dataset.py* for a wireframe of how to create your own training LMDB files.
 
 ##  Citation
-If you use this work in your research, please cite
+If you use this work in your research, please cite the following papers:
 
 ```
 @inproceedings{2017_Peretroukhin_Reducing,
